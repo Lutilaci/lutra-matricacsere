@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mindig aktuális Lutra matricacsere-lista: hiányzó és cserélhető matricák.">
+  <meta name="theme-color" content="#087e8b">
+  <title>Lutra matricacsere</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <span class="hero-shape hero-shape-coral" aria-hidden="true"></span>
+      <span class="hero-shape hero-shape-teal" aria-hidden="true"></span>
+      <div class="hero-content">
+        <p class="eyebrow">Mindig aktuális lista</p>
+        <h1>Lutra matricacsere</h1>
+        <p class="hero-copy">Segítsetek teljessé tenni az albumot!</p>
+      </div>
+    </header>
+
+    <section class="summary" aria-label="Összesítés">
+      <div class="summary-item summary-missing">
+        <strong id="missing-count">0</strong>
+        <span>hiányzik</span>
+      </div>
+      <div class="summary-item summary-available">
+        <strong id="available-types">0</strong>
+        <span>féle cserélhető</span>
+      </div>
+      <div class="summary-item summary-total">
+        <strong id="available-total">0</strong>
+        <span>cserematrica</span>
+      </div>
+    </section>
+
+    <section class="search-panel" aria-labelledby="search-heading">
+      <div>
+        <h2 id="search-heading">Keress rá egy számra</h2>
+        <p>Írd be a matrica számát, és azonnal látszik, hogy keressük-e vagy tudunk-e adni belőle.</p>
+      </div>
+      <label class="search-field" for="sticker-search">
+        <span class="visually-hidden">Matrica száma</span>
+        <input id="sticker-search" type="search" inputmode="numeric" pattern="[0-9]*" placeholder="Például: 38" autocomplete="off">
+      </label>
+      <p id="search-result" class="search-result" aria-live="polite"></p>
+    </section>
+
+    <section class="list-section" aria-labelledby="missing-heading">
+      <div class="section-heading">
+        <span class="section-icon section-icon-coral" aria-hidden="true">✦</span>
+        <div>
+          <h2 id="missing-heading">Ezeket keressük</h2>
+          <p>A piros számok még hiányoznak az albumból.</p>
+        </div>
+      </div>
+      <ul id="missing-list" class="sticker-grid sticker-grid-missing"></ul>
+      <p id="missing-empty" class="empty-state" hidden>Nincs a keresésnek megfelelő hiányzó matrica.</p>
+    </section>
+
+    <section class="list-section" aria-labelledby="available-heading">
+      <div class="section-heading">
+        <span class="section-icon section-icon-teal" aria-hidden="true">✦</span>
+        <div>
+          <h2 id="available-heading">Ezekből tudunk adni</h2>
+          <p>A kis jelvény mutatja, hány darab cserélhető az adott számból.</p>
+        </div>
+      </div>
+      <ul id="available-list" class="sticker-grid sticker-grid-available"></ul>
+      <p id="available-empty" class="empty-state" hidden>Nincs a keresésnek megfelelő cserematrica.</p>
+    </section>
+
+    <footer>
+      <p>Ha találtok cserét, szóljatok nekünk az oviban!</p>
+      <p class="updated">Utoljára frissítve: <time id="last-updated"></time></p>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
