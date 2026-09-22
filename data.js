@@ -1,6 +1,6 @@
 window.LUTRA_DATA = {
-  updated: "2026-09-21",
-  missing: [10, 13, 15, 39, 48, 71],
+  updated: "2026-09-22",
+  missing: [15, 48, 71],
   available: {
     1: 2,
     2: 2,
